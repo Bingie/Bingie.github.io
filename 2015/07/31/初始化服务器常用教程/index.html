@@ -20,7 +20,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,next" />
+  <meta name="keywords" content="Server," />
 
 
 
@@ -45,7 +45,7 @@
 
 
 
-  <title> 93NiusJ2c' Notes </title>
+  <title> 初始化服务器常用教程 // 93NiusJ2c' Notes </title>
 </head>
 
 <body>
@@ -59,9 +59,7 @@
   </div>
 <![endif]-->
 
-  <div class="container one-column 
-   page-home 
-">
+  <div class="container one-column page-post-detail">
     <div class="headband"></div>
 
     <div id="header" class="header">
@@ -147,9 +145,9 @@
       <div class="main-inner">
         <div id="content" class="content">
           
+
   <div id="posts" class="posts-expand">
     
-      
 
   <div class="post post-type-normal ">
     <div class="post-header">
@@ -160,142 +158,7 @@
           
           
             
-              <a class="post-title-link" href="/2015/07/31/利用 Hexo 和 Github 建立Blog心得（一）/">
-                利用 Hexo 和 Github 建立Blog心得（一）
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于 2015-07-31
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2015/07/31/利用 Hexo 和 Github 建立Blog心得（一）/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/31/利用 Hexo 和 Github 建立Blog心得（一）/"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </div>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>这篇文章主要根据前人总结和自己搭建经验综合而成，包括了自己在过程中遇到的问题，也会加强一些参考资料中未提到的重点。</p>
-</blockquote>
-<h2 id="注册域名">注册域名</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">推荐Godaddy注册域名，安全也比较有保障。</span><br></pre></td></tr></table></figure>
-<p><a href="http://www.admin5.com/article/20131014/527495.shtml" target="_blank" rel="external">《2013年10月新版godaddy域名注册图文教程》</a></p>
-<h2 id="安装准备">安装准备</h2><p>依次下载安装。</p>
-<ol>
-<li><p><a href="https://nodejs.org" target="_blank" rel="external">Node.js</a>     <strong>在页面点击Install后下载安装即可</strong></p>
-<p>​                  <strong>Mac OS 方法为<code>brew install node</code></strong></p>
-</li>
-<li><p><a href="http://git-scm.com" target="_blank" rel="external">Git</a>    </p>
-<ol>
-<li><a href="https://git-scm.com/book/zh/v1/起步-初次运行-Git-前的配置" target="_blank" rel="external">环境配置</a> </li>
-<li><strong>也可以直接下载<a href="http://git-scm.com/download/gui/" target="_blank" rel="external">Git GUI</a>省去环境配置这一步</strong></li>
-<li>使用Git Bash <ol>
-<li>可以在<strong>windows</strong>系统右键所需文件路径，点击Git Bash Here.</li>
-<li>直接点击已经下载好的<strong>Git Bash</strong>.</li>
-<li>或者利用下载Git GUI之后的<strong>Git Shell</strong>.</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-<h2 id="配置SSH">配置SSH</h2><h3 id="检查自己电脑上的SSH_Key">检查自己电脑上的SSH Key</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/.ssh</span><br></pre></td></tr></table></figure>
-<p><em>提示：No such file or directory ，那么你是第一次使用Git，需要进行以下步骤。</em></p>
-<p>​           <em>如果之前下载过Git GUI并安装，那么客户端已经帮你配置好Key，你可以直接跳到</em> <strong>使用Github Pages建立博客</strong>，<em>如果之后在链接上出现问题，建议还是自己新建一个SSH Key</em>。</p>
-<h3 id="生成新的SSH_Key">生成新的SSH Key</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"你自己的邮件地址@youremail.com"</span></span><br></pre></td></tr></table></figure>
-<p>会出现以下提示信息</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/Users/your_user_directory/.ssh/id_rsa):</span><br></pre></td></tr></table></figure>
-<p>回车即可（表示你的Key被保存在 <code>/Users/your_user_directory/.ssh/id_rsa</code>）</p>
-<p>然后要求你输入密码：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase):</span><br></pre></td></tr></table></figure>
-<p>再输入密码确认：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Enter same passphrase again:</span><br></pre></td></tr></table></figure>
-<p>如果两次你都回车则表示输入为空。输入这个密码串是对你和Github之间的链接有了加密作用，防止别人远程登入修改你的项目。</p>
-<h2 id="添加SSH_Key到Github">添加SSH Key到Github</h2><p> 在本机设置SSH Key之后，需要添加到GitHub上，以完成SSH链接的设置。</p>
-<p>1、打开本地C:\Documents and Settings\Administrator.ssh\id_rsa.pub文件。此文件里面内容为刚才生成人密钥。<strong>如果看不到这个文件，你需要设置显示隐藏文件。</strong> <strong>准确的复制</strong>这个文件的内容，才能保证设置的成功。</p>
-<p>2、登陆github系统。点击右上角的 Account Settings—&gt;SSH Public keys —&gt; add another public keys</p>
-<p>3、把你本地生成的密钥复制到里面（key文本框中）， 点击 add key 就ok了</p>
-<p><img src="93niusJ2c.com/Hexo/P1_1.png" alt="FD254F3A-2264-4F46-96F7-7520AB3749FD"></p>
-<h3 id="测试链接">测试链接</h3><p>输入下面的命令，Windows可以在Git Bash中执行（<strong>以管理员身份运行Git Bash</strong>）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-<p>如果出现：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The authenticity of host <span class="string">'github.com (***)'</span> can<span class="string">'t be established.</span><br><span class="line">RSA key fingerprint is ***.</span><br><span class="line">Are you sure you want to continue connecting (yes/no)?</span></span><br></pre></td></tr></table></figure>
-<p>直接回车就可以了。</p>
-<blockquote>
-<p>或者可能会有对话框跳出提示与上面相同的信息，直接点击Accept或者是Yes.</p>
-</blockquote>
-<h3 id="配置成功">配置成功</h3><blockquote>
-<p>以上这一部分可能出现的问题：</p>
-<p>提示<code>Error:Permission denied(publickey)</code>,点击 <a href="https://help.github.com/articles/error-permission-denied-publickey/" target="_blank" rel="external">这里</a> 解决（<strong>一般可以再遵照上面生成SSH Key及配置的流程做一遍</strong>）。</p>
-</blockquote>
-<hr>
-<blockquote>
-<p>参考资料 </p>
-<ol>
-<li><a href="http://www.pchou.info/web-build/2013/01/03/build-github-blog-page-01.html" target="_blank" rel="external">一步步在GitHub上创建博客主页系列</a></li>
-<li><a href="http://www.jianshu.com/p/05289a4bc8b2" target="_blank" rel="external">如何搭建一个独立博客——简明Github Pages与Hexo教程</a></li>
-</ol>
-</blockquote>
-<hr>
-<blockquote>
-<p>相关文章</p>
-<ol>
-<li><a href="">利用 Hexo 和 Github 建立Blog心得（二）</a></li>
-<li><a href="">利用 Hexo 和 Github 建立Blog心得（三）</a></li>
-</ol>
-</blockquote>
-
-        
-      
-    </div>
-
-    <div class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </div>
-  </div>
-
-
-    
-      
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2015/07/31/初始化服务器常用教程/">
-                初始化服务器常用教程
-              </a>
+              初始化服务器常用教程
             
           
         </h1>
@@ -327,8 +190,7 @@
       
 
       
-        
-          <h2 id="Shadowsocks">Shadowsocks</h2><ul>
+        <h2 id="Shadowsocks">Shadowsocks</h2><ul>
 <li><a href="http://www.tennfy.com/2136.html" target="_blank" rel="external">shadowsocks-libev一键安装脚本</a></li>
 <li><a href="http://www.tennfy.com/1477.html" target="_blank" rel="external">手动方式搭建shadowsocks</a></li>
 </ul>
@@ -357,27 +219,52 @@
 <li>Windows (<strong>推荐</strong>)       <a href="blog.93niusJ2c.com">click</a></li>
 </ul>
 
-        
       
     </div>
 
     <div class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/Server/"> #Server </a>
+          
+        </div>
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/07/31/利用 Hexo 和 Github 建立Blog心得（一）/">利用 Hexo 和 Github 建立Blog心得（一）</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </div>
   </div>
 
 
+
+    
+
+    
+      <div class="comments" id="comments">
+        
+          <div class="ds-thread" data-thread-key="2015/07/31/初始化服务器常用教程/"
+               data-title="初始化服务器常用教程" data-url="http://93NiusJ2c.com/2015/07/31/初始化服务器常用教程/">
+          </div>
+        
+      </div>
     
   </div>
 
-  
 
         </div>
 
@@ -398,6 +285,15 @@
   <div id="sidebar" class="sidebar">
     <div class="sidebar-inner">
 
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
       
 
       <div class="site-overview">
@@ -467,6 +363,17 @@
       </div>
 
       
+        <div class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Shadowsocks"><span class="nav-number">1.</span> <span class="nav-text">Shadowsocks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Web_Server"><span class="nav-number">2.</span> <span class="nav-text">Web Server</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Ubuntu_14-04"><span class="nav-number">2.0.1.</span> <span class="nav-text">Ubuntu 14.04</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mail"><span class="nav-number">2.0.2.</span> <span class="nav-text">Mail</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Blog_Pages_with_Github_and_Hexo"><span class="nav-number">3.</span> <span class="nav-text">Blog Pages with Github and Hexo</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </div>
+      
 
     </div>
   </div>
@@ -528,6 +435,145 @@
   <script type="text/javascript" src="/js/search-toggle.js"></script>
 
   
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.3" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var $sidebarInner = $('.sidebar-inner');
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.didShow', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+          var self = this;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      $(indicator).velocity('stop').velocity({
+        opacity: action === 'show' ? 0.4 : 0
+      }, { duration: 100 });
+    }
+
+  });
+</script>
+
+
+  <script type="text/javascript" id="sidebar.nav">
+    $(document).ready(function () {
+      var html = $('html');
+
+      $('.sidebar-nav li').on('click', function () {
+        var item = $(this);
+        var activeTabClassName = 'sidebar-nav-active';
+        var activePanelClassName = 'sidebar-panel-active';
+        if (item.hasClass(activeTabClassName)) {
+          return;
+        }
+
+        var currentTarget = $('.' + activePanelClassName);
+        var target = $('.' + item.data('target'));
+
+        currentTarget.velocity('transition.slideUpOut', 200, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', 200)
+            .addClass(activePanelClassName);
+        });
+
+        item.siblings().removeClass(activeTabClassName);
+        item.addClass(activeTabClassName);
+      });
+
+      $('.post-toc a').on('click', function (e) {
+        e.preventDefault();
+        var offset = $(escapeSelector(this.getAttribute('href'))).offset().top;
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        });
+      });
+
+      // Expand sidebar on post detail page by default, when post has a toc.
+      var $tocContent = $('.post-toc-content');
+      if (isDesktop() && CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    });
+  </script>
+
+
+
 
   <script type="text/javascript">
     $(document).ready(function () {
