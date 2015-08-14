@@ -20,7 +20,7 @@
 
 
 
-  <meta name="keywords" content="notes,skill,study," />
+  <meta name="keywords" content="notes,skills,study," />
 
 
 
@@ -45,7 +45,7 @@
 
 
 
-  <title> 渗透测试学习笔记（一） // 93NiusJ2c' Notes </title>
+  <title> 渗透测试学习笔记（二） // 93NiusJ2c' Notes </title>
 </head>
 
 <body>
@@ -158,7 +158,7 @@
           
           
             
-              渗透测试学习笔记（一）
+              渗透测试学习笔记（二）
             
           
         </h1>
@@ -175,8 +175,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/08/14/渗透测试学习笔记（一）/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/14/渗透测试学习笔记（一）/"></span>
+            <a href="/2015/08/14/Note_2/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/14/Note_2/"></span>
             </a>
           </span>
           
@@ -190,35 +190,10 @@
       
 
       
-        <p>虽然说之前稍微接触了渗透测试的小范围知识（也就是看了点《常用工具》里的泛泛介绍），现在才想到要正式记录自己关于这方面遇到的问题以及学习中的心得体会。希望自己能坚持下去。</p>
-<blockquote>
-<p>测试环境</p>
-</blockquote>
-<p>主机：Windows 10 ， Mac OS X 10.11 </p>
-<p>虚拟机：VMware Workstation 11</p>
-<blockquote>
-<p>遇到的问题</p>
-</blockquote>
-<h4 id="1-在安装Kali_Linux时候，提示网络中DHCP不存在（反应慢或者未联网）">1.在安装Kali Linux时候，提示网络中DHCP不存在（反应慢或者未联网）</h4><p><em>解决方法：</em> 应该在最初新建虚拟机导入ISO文件时，就在网络适配器中选择<strong>“桥接模式”</strong>。</p>
-<h4 id="2-_在安装Kali_Linux时候，选择镜像网站后不能下载package">2. 在安装Kali Linux时候，选择镜像网站后不能下载package</h4><p><em>解决方法：</em> 在最初选择语言和时区的时候，选择中国。目测美国镜像是被墙的。<strong>另外一定要确保以桥接模式联网。</strong></p>
-<h4 id="3-_在安装Kali_Linux之后，重启后在登陆界面闪现便是黑屏">3. 在安装Kali Linux之后，重启后在登陆界面闪现便是黑屏</h4><p><em>解决方法：</em>最终解决方法不是很科学，猜测是因为无法加载出图形界面而黑屏了。再三思索后用了官网的vmx文件，能够成功加载了。</p>
-<h4 id="4-_开机以后使用apt-get_update命令，显示fetch_…_failed">4. 开机以后使用apt-get update命令，显示fetch … failed</h4><p><em>解决方法</em>：估计kali.org被墙，路由大法好。</p>
-<h4 id="5-_用户操作">5. 用户操作</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ passwd (username) <span class="comment">#root时无需填写username</span></span><br><span class="line">$ adduser &lt;username&gt; <span class="comment">#添加用户</span></span><br></pre></td></tr></table></figure>
-<p>更多详见：<a href="http://www.cnblogs.com/xd502djj/archive/2011/11/23/2260094.html" target="_blank" rel="external">Linux增加／删除用户（组）</a></p>
-<h4 id="6-_尝试制作Portable_Kali_Linux">6. 尝试制作Portable Kali Linux</h4><p>使用的是书中推荐的Rufus软件，很方便，制作也很快。但是在电脑BIOS设定以后，并没有从U盘启动，打算再次通过这个教程制作：<a href="https://www.youtube.com/watch?v=aDEqyFQPP5s" target="_blank" rel="external">How to make a bootable Kali Linux USB Flash Drive/Pendrive</a> ［YouTube］</p>
-<h4 id="7-_在USB闪存盘上安装系统以后，想要让系统保存修改的文件">7. 在USB闪存盘上安装系统以后，想要让系统保存修改的文件</h4><p>详见：<a href="http://cn.docs.kali.org/downloading-cn/用live-u盘安装kali-linux" target="_blank" rel="external">用Live U盘安装Kali Linux</a></p>
-<h4 id="8-_VMware文件夹共享位置没有找到">8. VMware文件夹共享位置没有找到</h4><p>待解救。</p>
-<h4 id="9-_apt_及_dpkg_命令">9. apt 及 dpkg 命令</h4><blockquote>
-<p>常用</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ apt-cache search &lt;package_name&gt; <span class="comment">#search the name of ..</span></span><br><span class="line">$ apt-cache show &lt;package_name&gt; <span class="comment">#show the details od ..</span></span><br><span class="line">$ apt-get install &lt;package_name&gt; <span class="comment">#install</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>官方说明</p>
-</blockquote>
-<p>-<a href="https://help.ubuntu.com/community/AptGet/Howto" target="_blank" rel="external">apt指令</a><br>-<a href="http://www.debian.org/doc/manuals/debian-reference/ch02.en.html" target="_blank" rel="external">Debian package management</a></p>
-<h5 id="下载了deb格式文件后">下载了deb格式文件后</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ dpkg -i &lt;package_name&gt; <span class="comment">#末尾不用加.deb</span></span><br></pre></td></tr></table></figure>
-<h5 id="通过源代码安装">通过源代码安装</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span><span class="string">&lt;...&gt;</span> #在源码前加上需要的lib</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gcc &lt;name.c&gt; -o &lt;name&gt;</span><br></pre></td></tr></table></figure>
+        <p>这一篇主要记录的是<strong>信息收集</strong>。</p>
+<h4 id="查询域名的注册信息常用命令">查询域名的注册信息常用命令</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ whois example.com <span class="comment">#registered domain, IP Address, etc.</span></span><br></pre></td></tr></table></figure>
+<h4 id="DNS记录分析">DNS记录分析</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ host www.example.com <span class="comment">#IP Address</span></span><br><span class="line">$ host <span class="operator">-a</span> example.com <span class="comment">#Record A, AAAA, MX</span></span><br><span class="line">$ host <span class="operator">-l</span> example.com ns4.isp.com <span class="comment">#如果DNS服务器可以进行域传输</span></span><br><span class="line">$ dig example.com (any) <span class="comment"># DNS</span></span><br><span class="line">$ dig @ns4.isp.com example.com axfr</span><br></pre></td></tr></table></figure>
+<p>待续。</p>
 
       
     </div>
@@ -229,7 +204,7 @@
           
             <a href="/tags/notes/"> #notes </a>
           
-            <a href="/tags/skill/"> #skill </a>
+            <a href="/tags/skills/"> #skills </a>
           
             <a href="/tags/study/"> #study </a>
           
@@ -240,13 +215,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/08/14/渗透测试学习笔记（二）/">渗透测试学习笔记（二）</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/08/03/maths hacks/">Maths Hacks</a>
+              <a href="/2015/08/14/Note_1/">渗透测试学习笔记（一）</a>
             
           </div>
         </div>
@@ -264,8 +237,8 @@
     
       <div class="comments" id="comments">
         
-          <div class="ds-thread" data-thread-key="2015/08/14/渗透测试学习笔记（一）/"
-               data-title="渗透测试学习笔记（一）" data-url="http://93NiusJ2c.com/2015/08/14/渗透测试学习笔记（一）/">
+          <div class="ds-thread" data-thread-key="2015/08/14/Note_2/"
+               data-title="渗透测试学习笔记（二）" data-url="http://93NiusJ2c.com/2015/08/14/Note_2/">
           </div>
         
       </div>
@@ -375,7 +348,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-在安装Kali_Linux时候，提示网络中DHCP不存在（反应慢或者未联网）"><span class="nav-number">1.</span> <span class="nav-text">1.在安装Kali Linux时候，提示网络中DHCP不存在（反应慢或者未联网）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-_在安装Kali_Linux时候，选择镜像网站后不能下载package"><span class="nav-number">2.</span> <span class="nav-text">2. 在安装Kali Linux时候，选择镜像网站后不能下载package</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-_在安装Kali_Linux之后，重启后在登陆界面闪现便是黑屏"><span class="nav-number">3.</span> <span class="nav-text">3. 在安装Kali Linux之后，重启后在登陆界面闪现便是黑屏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-_开机以后使用apt-get_update命令，显示fetch_…_failed"><span class="nav-number">4.</span> <span class="nav-text">4. 开机以后使用apt-get update命令，显示fetch … failed</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-_用户操作"><span class="nav-number">5.</span> <span class="nav-text">5. 用户操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-_尝试制作Portable_Kali_Linux"><span class="nav-number">6.</span> <span class="nav-text">6. 尝试制作Portable Kali Linux</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-_在USB闪存盘上安装系统以后，想要让系统保存修改的文件"><span class="nav-number">7.</span> <span class="nav-text">7. 在USB闪存盘上安装系统以后，想要让系统保存修改的文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-_VMware文件夹共享位置没有找到"><span class="nav-number">8.</span> <span class="nav-text">8. VMware文件夹共享位置没有找到</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-_apt_及_dpkg_命令"><span class="nav-number">9.</span> <span class="nav-text">9. apt 及 dpkg 命令</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#下载了deb格式文件后"><span class="nav-number">9.1.</span> <span class="nav-text">下载了deb格式文件后</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#通过源代码安装"><span class="nav-number">9.2.</span> <span class="nav-text">通过源代码安装</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#查询域名的注册信息常用命令"><span class="nav-number">1.</span> <span class="nav-text">查询域名的注册信息常用命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DNS记录分析"><span class="nav-number">2.</span> <span class="nav-text">DNS记录分析</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
