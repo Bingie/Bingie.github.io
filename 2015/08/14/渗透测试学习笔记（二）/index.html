@@ -20,7 +20,7 @@
 
 
 
-  <meta name="keywords" content="skills," />
+  <meta name="keywords" content="notes,skills,study," />
 
 
 
@@ -45,7 +45,7 @@
 
 
 
-  <title> Maths Hacks // 93NiusJ2c' Notes </title>
+  <title> 渗透测试学习笔记（二） // 93NiusJ2c' Notes </title>
 </head>
 
 <body>
@@ -158,7 +158,7 @@
           
           
             
-              Maths Hacks
+              渗透测试学习笔记（二）
             
           
         </h1>
@@ -166,7 +166,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          发表于 2015-08-03
+          发表于 2015-08-14
         </span>
 
         
@@ -175,8 +175,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/08/03/maths hacks/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/03/maths hacks/"></span>
+            <a href="/2015/08/14/渗透测试学习笔记（二）/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/14/渗透测试学习笔记（二）/"></span>
             </a>
           </span>
           
@@ -190,24 +190,10 @@
       
 
       
-        <h2 id="1-_How_To_Figure_Out_What_Day_Of_The_Week_Falls_On_What_Date…">1. How To Figure Out What Day Of The Week Falls On What Date…</h2><p>You might be confused looking at the picture below, but the math is  actually quite simple (albeit a bit elaborate). You’ll need the codes <a href="http://gmmentalgym.blogspot.ca/2011/03/day-of-week-for-any-date-revised.html#ndatebasics" target="_blank" rel="external">HERE</a>, which will help you master this.</p>
-<p>July simply has a code of 5.</p>
-<p>20th is 6 because 7 goes into 20 twice, which is 14. 20 – 14 = 6.</p>
-<p>2069 is 2 because the leap year code of 2068 is 1 and 2069 is 1 year after, so that’s 2.</p>
-<p>The math can be difficult at first because there are a lot of  codes, but it works out incredibly well once you pick it up. Here’s a  separate example:</p>
-<p>January 3, 2014 is a Friday, right?</p>
-<p>So, January, according to the table, is 6, and we handle days by  using multiples of 7. We don’t need to, so it’s actually just 3 in this  case. Next we need to know the closest leap year, which was 2012. That  has a year code of 1 and 2013 is 2 years after, so 3 again.</p>
-<p>We get 6 + 3 + 3 = 12 – 7 = 5! FRIDAY!</p>
-<p><img src="http://qph.is.quoracdn.net/main-qimg-65d9a74c9806075b2059533ec21c184b?convert_to_webp=true" alt="img1"></p>
-<h2 id="2-_How_to_Add_And_Subtract_Fractions?">2. How to Add And Subtract Fractions?</h2><p><img src="http://qph.is.quoracdn.net/main-qimg-91cbbf523881782db1d5aeb2114337fb?convert_to_webp=true" alt="img2"></p>
-<h2 id="3-_How_many_squares_are_there?">3. How many squares are there?</h2><p>-When there are same number of rows and columns, for example in the case of 4<em>4 square the total number of squares would: :4^2+3^2+2^2+1^1=30.</em></p>
-<p>​        Same ways, the answer for squares in 7*7 is,49+36+25+16+9+4+1=140. </p>
-<p>-But when  there are different numbers of rows and columns into it, for example in  the case of a rectangle which has 5 rows and 4 columns the total number  os squares would:                                                                        5<em>4+4</em>3+3<em>2+2</em>1=40.</p>
-<p><img src="http://qph.is.quoracdn.net/main-qimg-b9d65dddef4d6e9e5b87077d706719c0?convert_to_webp=true" alt="img3"></p>
-<h2 id="4-_How_To_Multiply_Large_Numbers_In_Your_Head?">4. How To Multiply Large Numbers In Your Head?</h2><p><img src="http://qph.is.quoracdn.net/main-qimg-a732398af1c935c2b5e2c42ec9917439?convert_to_webp=true" alt="img4"></p>
-<blockquote>
-<p>via <a href="http://www.quora.com/What-are-the-best-math-hacks" target="_blank" rel="external">Quara</a></p>
-</blockquote>
+        <p>这一篇主要记录的是<strong>信息收集</strong>。</p>
+<h4 id="查询域名的注册信息常用命令">查询域名的注册信息常用命令</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ whois example.com <span class="comment">#registered domain, IP Address, etc.</span></span><br></pre></td></tr></table></figure>
+<h4 id="DNS记录分析">DNS记录分析</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ host www.example.com <span class="comment">#IP Address</span></span><br><span class="line">$ host <span class="operator">-a</span> example.com <span class="comment">#Record A, AAAA, MX</span></span><br><span class="line">$ host <span class="operator">-l</span> example.com ns4.isp.com <span class="comment">#如果DNS服务器可以进行域传输</span></span><br><span class="line">$ dig example.com (any) <span class="comment"># DNS</span></span><br><span class="line">$ dig @ns4.isp.com example.com axfr</span><br></pre></td></tr></table></figure>
+<p>待续。</p>
 
       
     </div>
@@ -216,7 +202,11 @@
       
         <div class="post-tags">
           
+            <a href="/tags/notes/"> #notes </a>
+          
             <a href="/tags/skills/"> #skills </a>
+          
+            <a href="/tags/study/"> #study </a>
           
         </div>
       
@@ -225,13 +215,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/08/14/渗透测试学习笔记（一）/">渗透测试学习笔记（一）</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/07/31/利用 Hexo 和 Github 建立Blog心得（一）/">利用 Hexo 和 Github 建立Blog心得（一）</a>
+              <a href="/2015/08/14/渗透测试学习笔记（一）/">渗透测试学习笔记（一）</a>
             
           </div>
         </div>
@@ -249,8 +237,8 @@
     
       <div class="comments" id="comments">
         
-          <div class="ds-thread" data-thread-key="2015/08/03/maths hacks/"
-               data-title="Maths Hacks" data-url="http://93NiusJ2c.com/2015/08/03/maths hacks/">
+          <div class="ds-thread" data-thread-key="2015/08/14/渗透测试学习笔记（二）/"
+               data-title="渗透测试学习笔记（二）" data-url="http://93NiusJ2c.com/2015/08/14/渗透测试学习笔记（二）/">
           </div>
         
       </div>
@@ -360,7 +348,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-_How_To_Figure_Out_What_Day_Of_The_Week_Falls_On_What_Date…"><span class="nav-number">1.</span> <span class="nav-text">1. How To Figure Out What Day Of The Week Falls On What Date…</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-_How_to_Add_And_Subtract_Fractions?"><span class="nav-number">2.</span> <span class="nav-text">2. How to Add And Subtract Fractions?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-_How_many_squares_are_there?"><span class="nav-number">3.</span> <span class="nav-text">3. How many squares are there?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-_How_To_Multiply_Large_Numbers_In_Your_Head?"><span class="nav-number">4.</span> <span class="nav-text">4. How To Multiply Large Numbers In Your Head?</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#查询域名的注册信息常用命令"><span class="nav-number">1.</span> <span class="nav-text">查询域名的注册信息常用命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DNS记录分析"><span class="nav-number">2.</span> <span class="nav-text">DNS记录分析</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
