@@ -207,7 +207,8 @@
 <p>更多详见：<a href="http://www.cnblogs.com/xd502djj/archive/2011/11/23/2260094.html" target="_blank" rel="external">Linux增加／删除用户（组）</a></p>
 <h4 id="6-_尝试制作Portable_Kali_Linux">6. 尝试制作Portable Kali Linux</h4><p>使用的是书中推荐的Rufus软件，很方便，制作也很快。但是在电脑BIOS设定以后，并没有从U盘启动，打算再次通过这个教程制作：<a href="https://www.youtube.com/watch?v=aDEqyFQPP5s" target="_blank" rel="external">How to make a bootable Kali Linux USB Flash Drive/Pendrive</a> ［YouTube］</p>
 <h4 id="7-_在USB闪存盘上安装系统以后，想要让系统保存修改的文件">7. 在USB闪存盘上安装系统以后，想要让系统保存修改的文件</h4><p>详见：<a href="http://cn.docs.kali.org/downloading-cn/用live-u盘安装kali-linux" target="_blank" rel="external">用Live U盘安装Kali Linux</a></p>
-<h4 id="8-_VMware文件夹共享位置没有找到">8. VMware文件夹共享位置没有找到</h4><p>待解救。</p>
+<h4 id="8-_VMware文件夹共享位置没有找到">8. VMware文件夹共享位置没有找到</h4><p><em>解决方法：</em>首先在VMware里面设置shared文件夹，优先级为最高。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /mnt/hgfs/</span><br></pre></td></tr></table></figure>
 <h4 id="9-_apt_及_dpkg_命令">9. apt 及 dpkg 命令</h4><blockquote>
 <p>常用</p>
 </blockquote>
@@ -215,7 +216,8 @@
 <blockquote>
 <p>官方说明</p>
 </blockquote>
-<p>-<a href="https://help.ubuntu.com/community/AptGet/Howto" target="_blank" rel="external">apt指令</a><br>-<a href="http://www.debian.org/doc/manuals/debian-reference/ch02.en.html" target="_blank" rel="external">Debian package management</a></p>
+<p>-<a href="https://help.ubuntu.com/community/AptGet/Howto" target="_blank" rel="external">apt指令</a></p>
+<p>-<a href="http://www.debian.org/doc/manuals/debian-reference/ch02.en.html" target="_blank" rel="external">Debian package management</a></p>
 <h5 id="下载了deb格式文件后">下载了deb格式文件后</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ dpkg -i &lt;package_name&gt; <span class="comment">#末尾不用加.deb</span></span><br></pre></td></tr></table></figure>
 <h5 id="通过源代码安装">通过源代码安装</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span><span class="string">&lt;...&gt;</span> #在源码前加上需要的lib</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gcc &lt;name.c&gt; -o &lt;name&gt;</span><br></pre></td></tr></table></figure>
