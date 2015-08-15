@@ -206,6 +206,9 @@
 <h4 id="5-_用户操作">5. 用户操作</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ passwd (username) <span class="comment">#root时无需填写username</span></span><br><span class="line">$ adduser &lt;username&gt; <span class="comment">#添加用户</span></span><br></pre></td></tr></table></figure>
 <p>更多详见：<a href="http://www.cnblogs.com/xd502djj/archive/2011/11/23/2260094.html" target="_blank" rel="external">Linux增加／删除用户（组）</a></p>
 <h4 id="6-_尝试制作Portable_Kali_Linux">6. 尝试制作Portable Kali Linux</h4><p>使用的是书中推荐的Rufus软件，很方便，制作也很快。但是在电脑BIOS设定以后，并没有从U盘启动，打算再次通过这个教程制作：<a href="https://www.youtube.com/watch?v=aDEqyFQPP5s" target="_blank" rel="external">How to make a bootable Kali Linux USB Flash Drive/Pendrive</a> ［YouTube］</p>
+<blockquote>
+<p>后来发现是启动方式问题，自己使用的是华硕电脑，BIOS设置中需要关闭secure boot, 启动CSM，最后重启时通过长按ESC键进入Boot Option。</p>
+</blockquote>
 <h4 id="7-_在USB闪存盘上安装系统以后，想要让系统保存修改的文件">7. 在USB闪存盘上安装系统以后，想要让系统保存修改的文件</h4><p>详见：<a href="http://cn.docs.kali.org/downloading-cn/用live-u盘安装kali-linux" target="_blank" rel="external">用Live U盘安装Kali Linux</a></p>
 <h4 id="8-_VMware文件夹共享位置没有找到">8. VMware文件夹共享位置没有找到</h4><p><em>解决方法：</em>首先在VMware里面设置shared文件夹，优先级为最高。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /mnt/hgfs/</span><br></pre></td></tr></table></figure>

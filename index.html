@@ -198,7 +198,13 @@
           <p>这一篇主要记录的是<strong>信息收集</strong>。</p>
 <h4 id="查询域名的注册信息常用命令">查询域名的注册信息常用命令</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ whois example.com <span class="comment">#registered domain, IP Address, etc.</span></span><br></pre></td></tr></table></figure>
 <h4 id="DNS记录分析">DNS记录分析</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ host www.example.com <span class="comment">#IP Address</span></span><br><span class="line">$ host <span class="operator">-a</span> example.com <span class="comment">#Record A, AAAA, MX</span></span><br><span class="line">$ host <span class="operator">-l</span> example.com ns4.isp.com <span class="comment">#如果DNS服务器可以进行域传输</span></span><br><span class="line">$ dig example.com (any) <span class="comment"># DNS</span></span><br><span class="line">$ dig @ns4.isp.com example.com axfr</span><br></pre></td></tr></table></figure>
-<p>待续。</p>
+<h4 id="从USB启动Kali_Linux后，无法联网">从USB启动Kali Linux后，无法联网</h4><p><em>解决方法：</em><a href="http://www.xjweb88.com/thread-124-1-1.html" target="_blank" rel="external">[环境安装] kali-linux中的网络配置</a></p>
+<p>同时，无法使用无线网络，在查找以后发现是不支持我电脑的内置网卡。</p>
+<blockquote>
+<p>打算之后再用另一个电脑尝试一下。</p>
+</blockquote>
+<h4 id="Mac系统不能从USB启动">Mac系统不能从USB启动</h4><p>目测是不支持UEFI，后续会再次尝试。（不过因为开关机速度慢，确实非常麻烦。）</p>
+<h4 id="USB_Persistence无效">USB Persistence无效</h4><p>官方文档中的使用方案不是特别管用，待解决。</p>
 
         
       
@@ -280,6 +286,9 @@
 <h4 id="5-_用户操作">5. 用户操作</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ passwd (username) <span class="comment">#root时无需填写username</span></span><br><span class="line">$ adduser &lt;username&gt; <span class="comment">#添加用户</span></span><br></pre></td></tr></table></figure>
 <p>更多详见：<a href="http://www.cnblogs.com/xd502djj/archive/2011/11/23/2260094.html" target="_blank" rel="external">Linux增加／删除用户（组）</a></p>
 <h4 id="6-_尝试制作Portable_Kali_Linux">6. 尝试制作Portable Kali Linux</h4><p>使用的是书中推荐的Rufus软件，很方便，制作也很快。但是在电脑BIOS设定以后，并没有从U盘启动，打算再次通过这个教程制作：<a href="https://www.youtube.com/watch?v=aDEqyFQPP5s" target="_blank" rel="external">How to make a bootable Kali Linux USB Flash Drive/Pendrive</a> ［YouTube］</p>
+<blockquote>
+<p>后来发现是启动方式问题，自己使用的是华硕电脑，BIOS设置中需要关闭secure boot, 启动CSM，最后重启时通过长按ESC键进入Boot Option。</p>
+</blockquote>
 <h4 id="7-_在USB闪存盘上安装系统以后，想要让系统保存修改的文件">7. 在USB闪存盘上安装系统以后，想要让系统保存修改的文件</h4><p>详见：<a href="http://cn.docs.kali.org/downloading-cn/用live-u盘安装kali-linux" target="_blank" rel="external">用Live U盘安装Kali Linux</a></p>
 <h4 id="8-_VMware文件夹共享位置没有找到">8. VMware文件夹共享位置没有找到</h4><p><em>解决方法：</em>首先在VMware里面设置shared文件夹，优先级为最高。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /mnt/hgfs/</span><br></pre></td></tr></table></figure>
